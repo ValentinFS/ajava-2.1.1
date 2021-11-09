@@ -43,7 +43,7 @@ public class WebFormTest {
     @Test
     void shouldTestNormalCss() {
         driver.get("http://localhost:9999/");
-        driver.findElement(By.cssSelector("[type='text']")).sendKeys("Петр");
+        driver.findElement(By.cssSelector("[type='text']")).sendKeys("Иванов");
         driver.findElement(By.cssSelector("[type='tel']")).sendKeys("+79161234567");
         driver.findElement(By.cssSelector("[class='checkbox__box']")).click();
         driver.findElement(By.cssSelector("button")).click();
@@ -69,7 +69,7 @@ public class WebFormTest {
     void shouldTestNameWithDash() {
         driver.get("http://localhost:9999/");
         List<WebElement> textFields = driver.findElements(By.className("input__control"));
-        textFields.get(0).sendKeys("Мамин-Сибиряк Дмитрий");
+        textFields.get(0).sendKeys("Мамин-Сибиряк");
         textFields.get(1).sendKeys("+71231234567");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.tagName("button")).click();
@@ -77,40 +77,5 @@ public class WebFormTest {
         String expectedMessage = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
         Assertions.assertEquals(expectedMessage, actualMessage.trim());
     }
-
-
-    // Негативные сценарии
-
-
-//    @Test
-//    void shouldTestShortName() {
-//        driver.get("http://localhost:9999/");
-//        List<WebElement> textFields = driver.findElements(By.className("input__control"));
-//        textFields.get(0).sendKeys("П");
-//        textFields.get(1).sendKeys("+71231234567");
-//        driver.findElement(By.className("checkbox__box")).click();
-//        driver.findElement(By.tagName("button")).click();
-//        String actualMessage = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText();
-//        String expectedMessage = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
-//        Assertions.assertEquals(expectedMessage, actualMessage.trim());
-//    }
-//
-//    @Test
-//    void shouldTestNameLongName() {
-//        driver.get("http://localhost:9999/");
-//        List<WebElement> textFields = driver.findElements(By.className("input__control"));
-//        textFields.get(0).sendKeys("ИвановИванИвановичИвановИванИвановичИвановИванИванович");
-//        textFields.get(1).sendKeys("+71231234567");
-//        driver.findElement(By.className("checkbox__box")).click();
-//        driver.findElement(By.tagName("button")).click();
-//        String actualMessage = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText();
-//        String expectedMessage = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
-//        Assertions.assertEquals(expectedMessage, actualMessage.trim());
-//    }
-
-
-
-
-
 
 }
