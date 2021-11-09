@@ -33,8 +33,9 @@ public class WebFormTest {
 
     @AfterEach
     void tearDown() {
-        driver.quit();
-        driver = null;
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     // Позитивные сценарии
