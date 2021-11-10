@@ -65,16 +65,6 @@ public class WebFormNegativeTest {
         Assertions.assertEquals(expectedMessage, actualMessage.trim());
     }
 
-//    @Test
-//    void shouldTestCheckBoxEmpty() {
-//        driver.get("http://localhost:9999/");
-//        driver.findElement(By.cssSelector("[type='text']")).sendKeys("Петров Петр");
-//        driver.findElement(By.cssSelector("[type='tel']")).sendKeys("+79161234567");
-//        driver.findElement(By.cssSelector("button")).click();
-//        String actualMessage = driver.findElement(By.cssSelector(".checkbox__text")).getText();
-//        String expectedMessage = "Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй";
-//        Assertions.assertEquals(expectedMessage, actualMessage.trim());
-//    }
 
     @Test
     void shouldTestCheckBoxEmpty() {
