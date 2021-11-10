@@ -11,19 +11,17 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.util.List;
 
 
-public class WebFormTest {
+public class WebFormPositiveTest {
 
     private WebDriver driver;
 
     @BeforeAll
     static void setUpAll() {
         WebDriverManager.chromedriver().setup();
-//        System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
     }
 
     @BeforeEach
     void setUp() {
-//        driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
@@ -37,8 +35,6 @@ public class WebFormTest {
             driver.quit();
         }
     }
-
-    // Позитивные сценарии
 
 
     @Test
